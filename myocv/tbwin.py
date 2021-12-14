@@ -48,8 +48,14 @@ class TrackbarWindow:
                 images.append(filler)
             row_length = len(images) // 2
 
-        rows = [images[i:i + row_length]
-                for i in range(0, len(images), row_length)]
-        all = cv.vconcat(tuple([cv.hconcat(tuple(row)) for row in rows]))
+        rows = [
+            images[i:i + row_length] for i in range(0, len(images), row_length)
+        ]
+
+        all = cv.vconcat(
+            tuple(
+                [cv.hconcat(tuple(row)) for row in rows]
+            )
+        )
 
         return all

@@ -2,13 +2,15 @@ import cv2 as cv
 
 
 class Trackbar:
-    def __init__(self, src_img_path: str, name: str,
-                 init_val: int, max_val: int) -> None:
-        self.img = cv.imread(src_img_path)
+    def __init__(self,
+                 name: str,
+                 init_val: int,
+                 max_val: int) -> None:
+
         self.name = name
         self.init_val = init_val
         self.max_val = max_val
-        self.trackbar_value = self.init_val
+        self.trackbar_value = init_val
 
     def get_position(self, win_name: str) -> None:
         self.trackbar_value = cv.getTrackbarPos(self.name, win_name)
@@ -17,5 +19,8 @@ class Trackbar:
         pass
 
     def create(self, win_name: str, callback) -> None:
-        cv.createTrackbar(self.name, win_name, self.init_val,
-                          self.max_val, callback)
+        cv.createTrackbar(self.name,
+                          win_name,
+                          self.init_val,
+                          self.max_val,
+                          callback)

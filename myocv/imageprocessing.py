@@ -4,12 +4,12 @@ MIN_AREA = 70
 MAX_AREA = 140
 
 
-def draw_images(operation):
-    contours = find_contours(operation)
+def draw_images(threshold):
+    contours = find_contours(threshold)
     return [
-        draw_contours(operation, contours),
-        draw_min_circle(operation, contours),
-        draw_bound_rect(operation, contours),
+        draw_contours(threshold, contours),
+        draw_min_circle(threshold, contours),
+        draw_bound_rect(threshold, contours),
     ]
 
 
