@@ -81,6 +81,6 @@ class ImageProcessor:
     @staticmethod
     def correct_color(contour) -> tuple:
         color = (0, 255, 0)
-        if MIN_AREA < cv.contourArea(contour) > MAX_AREA:
+        if MIN_AREA < cv.contourArea(contour) < MAX_AREA:
             color = (0, 0, 255)
         return color
