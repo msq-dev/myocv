@@ -1,9 +1,6 @@
 import cv2 as cv
 from myocv.impro import ImageProcessor
 
-MIN_AREA = 50
-MAX_AREA = 100
-
 
 class Trackbar:
     def __init__(self, src_img_path: str, name: str,
