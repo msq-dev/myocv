@@ -1,9 +1,9 @@
 import sys
 import imghdr
-from myocv.canny import Canny
-from myocv.simpth import SimpleThreshold
-from myocv.adaptith import AdaptiveThreshold
-from myocv.otsuth import OtsuThreshold
+from myocv.thresholds import SimpleThreshold
+from myocv.thresholds import CannyThreshold
+from myocv.thresholds import AdaptiveThreshold
+from myocv.thresholds import OtsuThreshold
 from myocv.tbwin import TrackbarWindow
 
 
@@ -18,7 +18,7 @@ def main():
     # image_02 = args[1]
 
     simple = SimpleThreshold(image)
-    canny = Canny(image)
+    canny = CannyThreshold(image)
     adapt = AdaptiveThreshold(image, threshold_type="gauss")
     # simple_02 = SimpleThreshold(image, threshold_type="tozero")
     # canny_02 = Canny(image_02, "Canny 2")

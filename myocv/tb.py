@@ -1,5 +1,4 @@
 import cv2 as cv
-from myocv.impro import ImageProcessor
 
 
 class Trackbar:
@@ -10,8 +9,6 @@ class Trackbar:
         self.init_val = init_val
         self.max_val = max_val
         self.trackbar_value = self.init_val
-        self.img_processor = ImageProcessor()
-        self.gray = self.img_processor.gray(self.img)
 
     def get_position(self, win_name: str) -> None:
         self.trackbar_value = cv.getTrackbarPos(self.name, win_name)
